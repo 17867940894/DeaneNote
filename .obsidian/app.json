@@ -1,0 +1,22 @@
+{
+  "promptDelete": false,
+  "strictLineBreaks": false,
+  "showLineNumber": false,
+  "newLinkFormat": "relative",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": false,
+  "showUnsupportedFiles": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./assets",
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "vimMode": false,
+  "uriCallbacks": true,
+  "deleteUnlinkedAttachments": "none",
+  "showHiddenFiles": false
+}

@@ -1,0 +1,34 @@
+config.md
+.obsidian-rag/
+.workbuddy/
+.mimosa/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Project runtime data (never commit someone's index / notes)
+data/
+*.bin
+*.manifest.json
+*.db
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# runtime logs
+index.err.log

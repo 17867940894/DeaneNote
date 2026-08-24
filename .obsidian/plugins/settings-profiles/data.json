@@ -1,0 +1,18 @@
+{
+  "activeProfile": {},
+  "profileUpdate": true,
+  "profileUpdateDelay": 800,
+  "uiUpdate": true,
+  "uiUpdateInterval": 1000,
+  "devices": {
+    "4789a5b2c23f3fcc8aed39b9c520b08e90e9d20001c4e42007b825c64b718656": "D:\\develop\\Config\\Obsidian_Global_Profiles",
+    "a06d922263724608aec19d1ce169705c4a6bb6f368f62dc42fd6eaa8b126ed17": "C:\\Users\\Administrator\\AppData\\Local\\ObsidianPlugins\\Data\\Profiles",
+    "d975b715aa57c68ef2a8cf62060c61a1f2e5a25d65d96d7bee515b8ab87ec8c4": "C:\\Users\\Administrator\\AppData\\Local\\ObsidianPlugins\\Data\\Profiles"
+  },
+  "statusbarInteraction": {
+    "click": "auto",
+    "ctrl_click": "none",
+    "shift_click": "none",
+    "alt_click": "none"
+  }
+}
