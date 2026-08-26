@@ -17,11 +17,13 @@ date created: 2026-08-24
 > [!info] 这是什么
 > 一套适配 Obsidian 的 **Appium 移动端自动化测试**系统学习文档：**基础 4 篇 + 进阶 3 篇 + 完整可运行实战项目**。所有笔记互相双链，可直接导入 Obsidian 作为知识库。
 >
-> 与已有的 [[Selenium 全栈笔记/README|Selenium 全栈笔记]]、[[Python Playwright/入门指南/README|Python Playwright 入门指南]] 同构——你已掌握 Web 自动化的工程化套路，本套只讲 Appium 与 Web 的差异点，并复用同一套工程骨架。
+> 与已有的 [[Selenium全栈笔记/README|Selenium 全栈笔记]]、[[互联网方向/Ai 测试/Python Playwright/入门指南/README|Python Playwright 入门指南]] 同构——你已掌握 Web 自动化的工程化套路，本套只讲 Appium 与 Web 的差异点，并复用同一套工程骨架。
 
 ## 前置分析（你的知识基础 → 本套切入点）
 
-> [!warning] 阅读说明
+> [!warning]
+>
+> 阅读说明
 > 下面这张表决定了本套文档的**讲解深度**。结论先行：**你不是 Appium 新手，是"已有 Web 自动化工程化能力、缺移动端自动化这一层"的进阶者**。因此本套文档不重复讲 pytest / PO / 数据驱动 / 报告 / CI，而是直接复用你已有的能力，重点补 Appium 专属差异。
 
 ### 你已有的能力（可直接迁移，本套不再啰嗦）
@@ -29,9 +31,9 @@ date created: 2026-08-24
 | 能力域 | 仓库已有笔记 | 在本套中的处理方式 |
 | --- | --- | --- |
 | 移动端测试基础 | [[移动APP测试]]、[[练习计划]] | ADB/AAPT、四大组件、monkey、logcat 抓崩溃/ANR、Fiddler 弱网**已掌握**，本套直接调用，只在"与 Appium 协同"处补充 |
-| Web 自动化工程化 | [[Selenium 全栈笔记/02-进阶笔记/02-PO模式\|PO 模式]]、[[Selenium 全栈笔记/02-进阶笔记/09-参数化与数据驱动\|参数化与数据驱动]]、[[Selenium 全栈笔记/02-进阶笔记/05-截图日志\|截图日志]] | **完全复用**：PO 分层、conftest/fixture、数据驱动、日志、Allure 报告、CI 套路一致，本套只换"浏览器"为"Appium Driver" |
-| 测试框架 pytest | [[Selenium 全栈笔记/README\|Selenium 全栈笔记]]、[[Python Playwright/入门指南/02-编写测试\|Playwright 编写测试]] | 直接复用 pytest 写法（`@pytest.fixture`、`parametrize`、`conftest.py`） |
-| 持续集成 CI | [[Python Playwright/入门指南/06-设置CI\|Playwright CI]]、[[测试人员 Docker 实战速查\|Docker 实战]] | 复用 GitHub Actions 思路，仅补充"移动端模拟器/云真机"特殊性 |
+| Web 自动化工程化 | [[Selenium全栈笔记/02-进阶笔记/02-PO模式#二、PO 分层结构\|PO 模式]]、[[Selenium全栈笔记/02-进阶笔记/09-参数化与数据驱动#二、pytest 参数化\|参数化与数据驱动]]、[[Selenium全栈笔记/02-进阶笔记/05-截图日志#二、截图工具封装\|截图日志]] | **完全复用**：PO 分层、conftest/fixture、数据驱动、日志、Allure 报告、CI 套路一致，本套只换"浏览器"为"Appium Driver" |
+| 测试框架 pytest | [[Selenium全栈笔记/README\|Selenium 全栈笔记]]、[[互联网方向/Ai 测试/Python Playwright/入门指南/02-编写测试#第一个测试\|Playwright 编写测试]] | 直接复用 pytest 写法（`@pytest.fixture`、`parametrize`、`conftest.py`） |
+| 持续集成 CI | [[互联网方向/Ai 测试/Python Playwright/入门指南/06-设置CI#设置 GitHub Actions\|Playwright CI]]、[[测试人员 Docker 实战速查\|Docker 实战]] | 复用 GitHub Actions 思路，仅补充"移动端模拟器/云真机"特殊性 |
 | 语言：Python + Java 双修 | [[Python基础]]、javaEE 系列 | 主语言用 **Python（Appium-Python-Client）**，与你的 Web 自动化栈一致；Java 客户端仅在附录对照 |
 | 性能 / 接口测试 | [[jmeter性能测试]]、[[Postman详细使用教程]] | 作为移动端专项测试的延伸，本套点到为止 |
 
@@ -97,7 +99,7 @@ date created: 2026-08-24
 
 ## 四、学习路径建议
 
-```
+```text
 已会 Web 自动化（Selenium/Playwright）
   │  直接复用：PO、pytest、数据驱动、报告、CI
   ▼
@@ -128,7 +130,7 @@ date created: 2026-08-24
 
 ## 六、与已有笔记的关系
 
-- 本套与 [[Selenium 全栈笔记/README|Selenium 全栈笔记]]、[[Python Playwright/入门指南/README|Python Playwright 入门指南]] **互为姐妹篇**：架构、工程化、PO、数据驱动、CI 完全一致，仅在"驱动与定位"层面不同。
+- 本套与 [[Selenium全栈笔记/README|Selenium 全栈笔记]]、[[互联网方向/Ai 测试/Python Playwright/入门指南/README|Python Playwright 入门指南]] **互为姐妹篇**：架构、工程化、PO、数据驱动、CI 完全一致，仅在"驱动与定位"层面不同。
 - 本套与 [[移动APP测试]] **互补**：移动APP测试讲的是"手工/命令行的移动测试基础"，本套讲的是"用 Appium 把它自动化"。
 - 建议在 Obsidian 中：以本索引（MOC）为入口，用 `[[双链]]` 跳转到具体章节。
 
@@ -139,5 +141,30 @@ date created: 2026-08-24
 3. **标签筛选**：用 `#appium` `#PO模式` 等标签快速筛选
 4. **搜索**：Ctrl+Shift+F 全库搜索
 5. **建议插件**：Templater（建笔记模板）、Dataview（动态索引）、Admonition（美化 callout）
+
+## 连接配置
+
+### appium inspector
+
+```json
+{
+  "platformName": "Android",
+  "appium:automationName": "UiAutomator2",
+  "appium:deviceName": "MuMu",
+  "appium:appPackage": "com.tal.kaoyan",
+  "appium:appActivity": "com.kaoyan.kylogin.ui.login.LoginKActivity",
+  "appium:noReset": true
+}
+```
+
+### 账号密码
+
+```text
+username: 17867940894
+
+password: appium123
+```
+
+
 
 > 下一节：[[01-环境搭建与工程初始化]]

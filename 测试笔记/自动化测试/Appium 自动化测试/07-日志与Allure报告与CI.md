@@ -18,7 +18,7 @@ date created: 2026-08-24
 > 4. 用 **GitHub Actions** 跑移动端测试（模拟器/云真机）
 > 5. 产出 `logger.py` / `screenshot.py` / CI 工作流
 
-相关笔记：[[Selenium 全栈笔记/02-进阶笔记/05-截图日志|Selenium 截图日志]]、[[Python Playwright/入门指南/06-设置CI|Playwright CI]]（**日志/截图/CI 思路完全一致**）
+相关笔记：[[Selenium全栈笔记/02-进阶笔记/05-截图日志#二、截图工具封装|Selenium 截图日志]]、[[互联网方向/Ai 测试/Python Playwright/入门指南/06-设置CI#设置 GitHub Actions|Playwright CI]]（**日志/截图/CI 思路完全一致**）
 
 > [!tip] 你已会这些，本节做"迁移到 Appium"
 > 日志用标准 `logging`、截图用 `driver.save_screenshot`、CI 用 GitHub Actions——都和你已有的 Web 自动化一致。移动端 CI 的唯一特殊点是**需要 Android 模拟器或云真机**，本节给出可运行的 workflow。
@@ -27,7 +27,7 @@ date created: 2026-08-24
 
 ## 一、日志封装 `utils/logger.py`
 
-```python
+```python title="utils/logger.py"
 import logging
 import os
 
@@ -61,7 +61,7 @@ logger = get_logger()
 
 ## 二、失败自动截图 `utils/screenshot.py`
 
-```python
+```python title="utils/screenshot.py"
 import os
 import time
 
@@ -77,7 +77,7 @@ def screenshot_on_failure(driver, name: str = None) -> str:
     return path
 ```
 
-在 `conftest.py` 里失败自动调用（见 [[01-环境搭建与工程初始化]] 的 `pytest_runtest_makereport` 钩子）。
+在 `conftest.py` 里失败自动调用（见 [[01-环境搭建与工程初始化#3.7 pytest 配置 pytest.ini + 夹具 conftest.py]] 的 `pytest_runtest_makereport` 钩子）。
 
 ---
 
@@ -97,10 +97,11 @@ allure serve reports/allure
 
 ### 3.2 在用例里加 Allure 标注（让报告可读）
 
-```python
+```python title="testcases/test_login_allure.py"
 import allure
 from pages.login_page import LoginPage
 from pages.home_page import HomePage
+from utils.screenshot import screenshot_on_failure
 
 
 @allure.feature("登录模块")
@@ -137,9 +138,7 @@ class TestLoginAllure:
 > [!warning] 移动端 CI 的特殊性
 > 和 Web/Playwright 不同，Appium 测试**必须有一个 Android 运行环境**（模拟器或真机）。GitHub 的 `ubuntu-latest` 不自带模拟器，需用 `reactivecircus/android-emulator-runner` 拉起模拟器，或接云真机（BrowserStack / Sauce Labs / 阿里云真机）。
 
-### `.github/workflows/appium.yml`
-
-```yaml
+```yaml title=".github/workflows/appium.yml"
 name: Appium Android Tests
 
 on:

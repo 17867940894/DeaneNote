@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "互联网方向/互联网方向_课堂笔记_2026.8.md",
+                "file": "测试笔记/自动化测试/Appium 自动化测试/05-PO模式与页面封装.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "互联网方向_课堂笔记_2026.8"
+              "title": "05-PO模式与页面封装"
             }
           }
         ]
@@ -130,7 +130,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "互联网方向/互联网方向_课堂笔记_2026.8.md",
+                "file": "测试笔记/自动化测试/Appium 自动化测试/01-环境搭建与工程初始化.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -172,29 +172,57 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "terminal:Open terminal": false,
       "command-palette:打开命令面板": false,
-      "markdown-importer:打开 Markdown 格式转换器": false
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "terminal:Open terminal": false
     }
   },
   "active": "ab9bfc1634f551fb",
   "lastOpenFiles": [
-    "互联网方向/DevOps/课堂笔记.md",
+    "测试笔记/自动化测试/Appium 自动化测试/README.md.bak3-20260826",
+    "测试笔记/自动化测试/Appium 自动化测试/07-日志与Allure报告与CI.md.bak3-20260826",
+    "测试笔记/自动化测试/Appium 自动化测试/06-参数化与数据驱动.md.bak3-20260826",
+    "测试笔记/自动化测试/Appium 自动化测试/05-PO模式与页面封装.md.bak3-20260826",
+    "测试笔记/自动化测试/Appium 自动化测试/04-常用操作API.md.bak3-20260826",
+    "测试笔记/自动化测试/Appium 自动化测试/03-等待机制.md.bak3-20260826",
+    "测试笔记/自动化测试/Appium 自动化测试/02-元素定位策略.md.bak3-20260826",
+    "测试笔记/自动化测试/Appium 自动化测试/01-环境搭建与工程初始化.md.bak3-20260826",
+    "测试笔记/自动化测试/Appium 自动化测试/Selenium PO 模式.md",
+    "测试笔记/自动化测试/Appium 自动化测试/05-PO模式与页面封装.md",
+    "Selenium 全栈笔记/02-进阶笔记/02-PO模式.md",
+    "Selenium 全栈笔记/02-进阶笔记",
+    "Selenium 全栈笔记",
+    "测试笔记/自动化测试/Appium 自动化测试/04-常用操作API.md",
+    "测试笔记/自动化测试/Appium 自动化测试/01-环境搭建与工程初始化.md",
+    "README.md",
     "互联网方向/互联网方向_课堂笔记_2026.8.md",
+    "课外拓展/Agent管理项目的结构.md",
+    "SKILL.md",
+    "temp.md",
+    "测试笔记/自动化测试/Selenium全栈笔记/pytest+Selenium测试RuoYi3.9实战教程.md",
+    "测试笔记/自动化测试/Selenium全栈笔记/README.md",
+    "测试笔记/移动APP测试/移动APP--ADB一键调用命令合集.md",
+    "测试笔记/移动APP测试/移动APP测试.md",
+    "测试笔记/移动APP测试/遇到的问题.md",
+    "测试笔记/软件测试基础/软件测试课堂笔记.md",
+    "测试笔记/自动化测试/Selenium/8. 实战技巧.md",
+    "测试笔记/web/Web协议和测试.md",
+    "测试笔记/00-知识地图.md",
+    "测试笔记/软件测试基本常识.md",
+    "测试工具/浏览器开发者工具.md",
+    "Ai 测试/AI+测试/05-Skills 技能体系与 Hermes Agent 实战.md",
+    "互联网方向/DevOps/课堂笔记.md",
     "互联网方向/DevOps/技术模拟面试_问题准备.md",
     "互联网方向/DevOps/Restful+swagger+Mock/Restful+swagger+Mock.md",
-    "互联网方向/互联网方向学习安排.md",
-    "互联网方向/测试开发/课堂笔记.md",
-    "互联网方向/测试开发/技术模拟面试_问题准备.md",
     "互联网方向/测试开发/技术模拟面试_问题准备/assets/image-1.png",
-    "测试笔记/每日测试50题汇总/2026-08-01.md",
     "互联网方向/测试开发/assets/image-9.png",
     "互联网方向/测试开发/assets/image-8.png",
     "互联网方向/测试开发/assets/image-7.png",
@@ -205,33 +233,6 @@
     "互联网方向/测试开发/assets/image-3.png",
     "互联网方向/测试开发/assets/image-1.png",
     "互联网方向/测试开发/assets",
-    "互联网方向/测试开发/课堂笔记/互联网方向_课堂笔记_2026.8.md",
-    "互联网方向/测试开发/课堂笔记/assets",
-    "互联网方向/测试开发/课堂笔记",
-    "互联网方向/测试开发/技术模拟面试_问题准备/assets",
-    "互联网方向/测试开发/技术模拟面试_问题准备/01 互联网方向_技术模拟面试_问题准备 2026.8.md",
-    "互联网方向/测试开发/技术模拟面试_问题准备",
-    "互联网方向/测试开发/01 互联网方向_技术模拟面试_问题准备/01 互联网方向_技术模拟面试_问题准备 2026.8.md",
-    "互联网方向/测试开发/互联网方向_课堂笔记/互联网方向_课堂笔记_2026.8.md",
-    "互联网方向/测试开发/互联网方向_课堂笔记/assets",
-    "互联网方向/测试开发/互联网方向_课堂笔记",
-    "互联网方向/测试开发/01 互联网方向_技术模拟面试_问题准备/assets",
-    "互联网方向/测试开发/01 互联网方向_技术模拟面试_问题准备",
-    "互联网方向/Ai 测试/AI+测试/05-.mdI 智能体执行平台与全场景 Agent",
-    "互联网方向/Ai 测试/AI+测试/05-.md",
-    "互联网方向/Ai 测试/AI+测试/04-Skills 技能体系与 Hermes Agent 实战.md",
-    "互联网方向/Ai 测试/AI+测试/Untitled.md",
-    "测试笔记/每日测试50题汇总/2026-08-14.md",
-    "Ai 测试/AI+测试/05-Skills 技能体系与 Hermes Agent 实战.md",
-    "Ai 测试/AI+测试/04-AI 智能体.md",
-    "测试笔记/每日测试50题汇总/2026-08-19.md",
-    "测试笔记/每日测试50题汇总/2026-08-15.md",
-    "测试笔记/每日测试50题汇总/2026-08-17.md",
-    "测试笔记/每日测试50题汇总/2026-08-18.md",
-    "temp.assets/backup_20260818/每日测试50题汇总/2026-08-13.md",
-    "temp.assets/backup_20260818/每日测试50题汇总/2026-08-17.md",
-    "temp.assets/backup_20260818/每日测试50题汇总/2026-08-15.md",
-    "互联网方向/Ai 测试/Python Playwright/Basics/05-身份验证.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
