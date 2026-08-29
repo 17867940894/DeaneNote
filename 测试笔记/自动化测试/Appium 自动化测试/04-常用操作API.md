@@ -57,8 +57,9 @@ def type(self, locator, text, timeout=None):
 
 ```python title="testcases/test_xxx.py"
 base = BasePage(driver)
-base.type((AppiumBy.ID, "com.tal.kaoyan:id/login_account_edittext"), "13800000001")
-base.click((AppiumBy.ID, "com.tal.kaoyan:id/login_login_btn"))
+# 手机号输入框 / 登录按钮（真实 ID，已实测；旧版 login_account_edittext/login_login_btn 已失效）
+base.type((AppiumBy.ID, "com.tal.kaoyan:id/kylogin_phone_input_phonenum"), "17867940894")
+base.click((AppiumBy.ID, "com.tal.kaoyan:id/loginCodeLoginBtn"))
 ```
 
 > 底层就是 `driver.find_element(AppiumBy.ID, "...")` 找到元素再调 `.click()` / `.clear()` / `.send_keys()`。工程上不裸调，统一走 `BasePage` 封装（复用 + 自带显式等待）。
@@ -288,53 +289,58 @@ print(toast.text)
 
 很多 App 内嵌 H5 页面（如活动页、客服页）。这类页面在 `NATIVE_APP` 上下文下 **无法用普通方式定位**，必须先切到 `WEBVIEW_xxx` 上下文。
 
-```python title="testcases/test_webview.py"
-# 1) 查看当前有哪些上下文
-print(driver.contexts)        # ['NATIVE_APP', 'WEBVIEW_com.tal.kaoyan']
-# 2) 切到 WebView（H5 页面已在前台时）
-driver.switch_to.context("WEBVIEW_com.tal.kaoyan")
-# 3) 此刻可用 CSS / XPath 定位 H5 元素（和 Web 自动化一模一样）
-driver.find_element(AppiumBy.CSS_SELECTOR, ".activity-title").click()
-# 4) 切回原生
-driver.switch_to.context("NATIVE_APP")
+```python title="testcases/test_demo.py"
+from appium.webdriver.common.appiumby import AppiumBy
+
+
+class TestDemo:
+    def test_gesture_demo(self, driver):
+        # 1) 查看当前有哪些上下文（考研帮登录/首页为原生页面，无 WebView）
+        contexts = driver.contexts
+        print(f"当前上下文: {contexts}")
+        assert "NATIVE_APP" in contexts, "原生上下文必须存在"
+
+        # 2) WebView 切换 API 的用法（仅当页面含 H5 时才可用）
+        #    有 WEBVIEW 时：
+        #    driver.switch_to.context("WEBVIEW_com.tal.kaoyan")
+        #    driver.find_element(AppiumBy.CSS_SELECTOR, ".activity-title").click()
+        #    driver.switch_to.context("NATIVE_APP")
 ```
 
 > [!warning] 
 >
-> 切 WebView 前必须满足条件
+> 切 WebView 前的硬条件（已实测）
 >
-> - App 已打开 H5 页面（前台可见）
+> - **考研帮登录页/首页没有 WebView**，`driver.contexts` 只有 `['NATIVE_APP']`；
+>   在无 WebView 的页面上执行 `switch_to.context("WEBVIEW_xxx")` 会抛
+>   `NoSuchContextException`。要测 WebView 切换，请先导航到含 H5 的页面（如课程详情页）。
 > - 该 WebView 需开启 **WebView 调试**（开发需在 App 代码里 `WebView.setWebContentsDebuggingEnabled(true)`），否则 `WEBVIEW_xxx` 不会出现
-> - 真机/模拟器需能 `adb shell cat /proc/net/unix | grep webview` 看到调试通道
 
 ---
 
 ## 六、实战：登录 → 首页完整流程
 
 ```python title="testcases/test_login_flow.py"
-import pytest
-from appium.webdriver.common.appiumby import AppiumBy
 from pages.login_page import LoginPage
 from pages.home_page import HomePage
 
 
 class TestLoginFlow:
-    def test_login_then_enter_home(self, driver):
-        # 1) 登录页：输入并登录
-        login = LoginPage(driver)
-        login.login("13800000001", "Test@123")
+    def test_login_wrong_code_then_stay(self, driver):
+        """验证码错误场景：不跳首页（可自动跑通）。
 
-        # 2) 等待首页 Activity（App 专属等待，见 [[03-等待机制#三、WaitHelper 强化版（移动端专属）]]）
-        from selenium.webdriver.support.ui import WebDriverWait
-        from selenium.webdriver.support import expected_conditions as EC
-        WebDriverWait(driver, 10).until(
-            EC.activity_started("com.tal.kaoyan", "com.tal.kaoyan.ui.activity.HomeTabActivity")
-        )
+        注：考研帮是短信验证码登录，"登录成功→首页"需真实验证码，
+        自动化受外部依赖限制（见 [[06-参数化与数据驱动#三、parametrize + YAML 驱动]] 的说明）。
+        """
+        # 1) 登录页：输入手机号 + 错误验证码并登录
+        login = LoginPage(driver).load()
+        login.login("17867940894", "wrongpass")
 
-        # 3) 首页：断言欢迎/用户名可见
-        home = HomePage(driver)
-        assert home.is_loaded(), "首页未加载"
-        print("✅ 登录→首页流程跑通")
+        # 2) 稳定断言：错误验证码不跳转首页
+        #    （Toast 抓取依赖 uiautomator2 事件流不稳定，文案仅打印不硬断言）
+        assert not HomePage(driver).is_loaded(), "验证码错误不应跳转首页"
+        print(f"  错误提示: {login.get_error_message()!r}")
+        print("✅ 验证码错误→留在登录页，流程验证通过")
 ```
 
 > 用到的 `LoginPage` / `HomePage` 定义见 [[05-PO模式与页面封装#四、业务页面对象]] 的 `pages/login_page.py`、`pages/home_page.py`。
