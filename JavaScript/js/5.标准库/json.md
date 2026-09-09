@@ -415,7 +415,7 @@ JSON.parse(JSON.stringify(obj))
 
 ## 相关笔记
 - [[22-jQuery，ajax]]
-- [[Fiddler]]
+- [[../../../测试工具/Fiddler]]
 - [[Spring MVC]]
 - [[xmlhttprequest]]
 - [[组卷历史]]

@@ -382,7 +382,7 @@ document.cookie = 'fontSize=;expires=Thu, 01-Jan-1970 00:00:01 GMT';
 - [[19-请求和响应]]
 - [[20-会话技术]]
 - [[21-JSP]]
-- [[Fiddler]]
+- [[../../../测试工具/Fiddler]]
 - lodeRunner入门笔记
 - [[window]]
 - [[面试题]]

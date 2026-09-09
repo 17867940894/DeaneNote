@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "c0f07ddbaaeb544f",
+        "id": "be76f823ceeda5a9",
         "type": "tabs",
         "children": [
           {
-            "id": "ab9bfc1634f551fb",
+            "id": "ce38b7b8a1feb62a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "测试笔记/自动化测试/Appium 自动化测试/05-PO模式与页面封装.md",
-                "mode": "source",
+                "file": "Linux 开发环境方案.md",
+                "mode": "preview",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "05-PO模式与页面封装"
+              "title": "Linux 开发环境方案"
             }
           }
         ]
@@ -130,7 +130,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "测试笔记/自动化测试/Appium 自动化测试/01-环境搭建与工程初始化.md",
+                "file": "测试工具/Fiddler/Fiddler.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -172,7 +172,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 306.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -185,9 +185,18 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "ab9bfc1634f551fb",
+  "active": "ce38b7b8a1feb62a",
   "lastOpenFiles": [
+    "AGENTS.md",
+    "常见警报类型.md",
+    "测试笔记/软件测试基本常识.md",
+    "测试笔记/00-知识地图.md",
+    "测试工具/Fiddler/Fiddler.md",
+    "测试工具/Fiddler.md",
+    "测试工具/Fiddler",
+    "互联网方向/互联网方向_技术模拟面试_问答精要.md",
     "测试笔记/自动化测试/Appium 自动化测试/05-PO模式与页面封装.md",
+    "互联网方向/互联网方向_技术模拟面试_审核报告.md",
     "测试笔记/自动化测试/Appium 自动化测试/README.md.bak3-20260826",
     "测试笔记/自动化测试/Appium 自动化测试/07-日志与Allure报告与CI.md.bak3-20260826",
     "测试笔记/自动化测试/Appium 自动化测试/06-参数化与数据驱动.md.bak3-20260826",
@@ -199,7 +208,6 @@
     "测试笔记/自动化测试/Appium 自动化测试/Selenium PO 模式.md",
     "Selenium 全栈笔记/02-进阶笔记/02-PO模式.md",
     "Selenium 全栈笔记/02-进阶笔记",
-    "Selenium 全栈笔记",
     "测试笔记/自动化测试/Appium 自动化测试/04-常用操作API.md",
     "测试笔记/自动化测试/Appium 自动化测试/01-环境搭建与工程初始化.md",
     "README.md",
@@ -215,13 +223,6 @@
     "测试笔记/软件测试基础/软件测试课堂笔记.md",
     "测试笔记/自动化测试/Selenium/8. 实战技巧.md",
     "测试笔记/web/Web协议和测试.md",
-    "测试笔记/00-知识地图.md",
-    "测试笔记/软件测试基本常识.md",
-    "测试工具/浏览器开发者工具.md",
-    "Ai 测试/AI+测试/05-Skills 技能体系与 Hermes Agent 实战.md",
-    "互联网方向/DevOps/课堂笔记.md",
-    "互联网方向/DevOps/技术模拟面试_问题准备.md",
-    "互联网方向/DevOps/Restful+swagger+Mock/Restful+swagger+Mock.md",
     "互联网方向/测试开发/技术模拟面试_问题准备/assets/image-1.png",
     "互联网方向/测试开发/assets/image-9.png",
     "互联网方向/测试开发/assets/image-8.png",

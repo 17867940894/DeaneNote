@@ -18,5 +18,6 @@
   "vimMode": false,
   "uriCallbacks": true,
   "deleteUnlinkedAttachments": "none",
-  "showHiddenFiles": false
+  "showHiddenFiles": false,
+  "readableLineLength": false
 }

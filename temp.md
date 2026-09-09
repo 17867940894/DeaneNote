@@ -1,95 +1,32 @@
-# AGENTS.md
-## Role
-You are a Senior Software Engineer and AI Agent.
+**2026-至今** **AgentFlowRelay( 个人项目 )** 
 
-Your goals:
+项目负责人
 
-1. Understand requirements before coding.
-2. Prefer modifying existing code over creating new abstractions.
-3. Keep solutions simple and maintainable.
-4. Minimize token and file changes.
-5. Produce production-ready code.
-6. Back up all files to C:\Users\17867\Desktop\Temp.
+ 
 
----
+平台定位：出于对技术的热爱，在实习空余时间独立设计并落地的 AI 多智能体研发协作平台(Java 17 · Spring Boot4·Flowable8·Vue3·MySQL · Redis)，覆盖项目 / 任务 / 审批流 / 文件 / Git / LLM 等 14 个业务域;本人主导架构决策，全程以 AI Agent 协作研发，并独立搭建质量门禁;
 
-## Workflow
+• AI 能力与 Agent 协作：内置 LLM 提供商管理(API Key 走 AES-GCM 加密)、模型调试台与 SSE 流式对话;设计 Skill / MCP / 脚本三类智能体能力登记 + AI 计划助手(引用 Skill/MCP 生成结构化执行计划)，落地 `/agent/` 聚合接口与多智能体协作编排(角色分工 / 并行控制 / 上下文 / 交付 / 通信);
 
-Before coding:
+• 上下文管理：实现项目级上下文聚合 `/workflow/context/project/{id}`，将项目 / 任务 / 成员 / 记忆分层结构化，先做访问权限校验再注入 Agent 调试台与 LLM 对话，保证 AI 上下文准确且越权先拦截;
 
-* Read related files.
-* Understand architecture.
-* Identify constraints.
-* Create a short implementation plan.
+• 项目交互功能：Agent 调试台支持项目选择联动 Git 上下文 / 文件树 / 状态统计、流程选择联动节点 / BPMN XML、任务 ID 查询详情抽屉;附件采用内容寻址(sha256)存储，配套通知与全量操作审计;
 
-During coding:
+• 工作流引擎：基于 Flowable8+bpmn-js 流程设计器，实现流程定义 defKey 后端自动生成、AUTO 分发规则(任务类型 + 节点 → 自动指派 / 角色解析 / 未命中可认领)、MANUAL / AUTO / CLAIM 三种分发方式与撤回 / 驳回 / 超时扫描等完整审批流转;
 
-* Follow existing patterns.
-* Avoid introducing new frameworks.
-* Keep functions small.
-* Add types when possible.
+• 测试体系(独立架构)：从 0 设计 L0–L4 五层自动化——JUnit 5 单元、pytest 接口、REST Assured 真实容器专项、Playwright E2E、Vitest 组件，累计 400+ 用例支撑一键全量回归;安全面参数化覆盖越权 / XSS / BPMN XML 防御 / SQL 注入白名单，并基于 OpenAPI 做接口契约漂移检测;
 
-After coding:
+• 质量门禁 + AI 协作研发：搭建提交前全量回归门禁(JaCoCo 行 35% / 分支 25% + pytest + Playwright + Vitest)，全绿方可发布、脚本化发布健康检查失败自动回滚;AI 产出全部经门禁验证后合入，形成"AI 提效 + 质量保真"闭环。
 
-* Run tests.
-* Run lint.
-* Verify no regression.
-* Summarize changes.
 
----
 
-## Architecture Rules
+**2026–至今 AgentFlowRelay（个人项目）**
+**项目负责人**
 
-* Domain logic must stay in domain layer.
-* UI must not contain business logic.
-* Infrastructure code must be isolated.
-* Prefer composition over inheritance.
+基于 **Java 17 + Spring Boot 4 + Flowable 8 + Vue 3** 独立设计并开发 AI 多智能体研发协作平台，覆盖项目管理、任务协作、审批流、文件管理、Git 集成、LLM 接入等 14 个业务域。主导系统架构设计，并通过 AI Agent 协作完成需求开发与质量验证。
 
----
-
-## Code Quality
-
-Required:
-
-* Strong typing
-* Error handling
-* Unit tests
-* Documentation for public APIs
-
-Forbidden:
-
-* Dead code
-* Magic numbers
-* Premature optimization
-* Duplicate implementations
-
----
-
-## Security Rules
-
-Never:
-
-* Expose secrets
-* Log credentials
-* Store plaintext passwords
-* Disable validation checks
-
-Always:
-
-* Validate inputs
-* Escape user content
-* Use least privilege
-
----
-
-## Output Format
-
-When completing a task:
-
-1. Explain the plan.
-2. Show files modified.
-3. Describe risks.
-4. Suggest follow-up improvements.
-
-Never output unnecessary code.
-
+- **AI Agent 协作体系：** 实现 LLM 提供商管理（API Key AES-GCM 加密）、模型调试台与 SSE 流式对话；设计 Skill、MCP、脚本三类能力注册机制，构建多智能体协作框架，支持任务规划、角色分工、并行执行、上下文共享与结果交付。
+- **上下文与业务集成：** 构建项目级上下文聚合能力，将项目、任务、成员及记忆数据结构化管理，并结合权限校验实现安全注入；支持 Git、文件、流程等业务数据与 AI 对话联动，提升智能体决策准确性。
+- **工作流引擎建设：** 基于 Flowable 8 与 BPMN 设计器实现流程建模与审批流转，支持自动分派、角色解析、任务认领、撤回驳回及超时处理等机制，满足复杂业务审批场景需求。
+- **自动化测试体系：** 从 0 搭建 L0–L4 五层测试架构（JUnit5、pytest、REST Assured、Playwright、Vitest），累计建设 400+ 自动化用例，实现一键全量回归；覆盖越权访问、XSS、SQL 注入、流程安全等关键场景，并基于 OpenAPI 实现接口契约校验。
+- **质量门禁与 AI 研发闭环：** 建立覆盖率、自动化测试及健康检查的发布门禁机制，支持发布失败自动回滚；所有 AI 生成代码均需通过质量验证后方可合入，形成“AI 提效 + 质量保障”的研发闭环。
