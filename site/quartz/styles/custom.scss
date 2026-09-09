@@ -1,0 +1,82 @@
+@use "./variables.scss" as *;
+
+// put your custom CSS here!
+
+/* 首页文件夹卡片 */
+.note-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.note-card {
+  display: block;
+  padding: 1.25rem 1.25rem 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  background: var(--light);
+  color: var(--dark);
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+}
+
+.note-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--secondary);
+}
+
+.note-card p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+/* 文件夹页 / 标签页：子项卡片网格 */
+.section-ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.section-li {
+  list-style: none;
+}
+
+.section {
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  background: var(--light);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.section .desc h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.section .desc h3 a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.section .desc h3 a:hover {
+  text-decoration: underline;
+}
